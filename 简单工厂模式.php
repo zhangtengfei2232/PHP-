@@ -8,73 +8,70 @@
  * 使用简单工厂模式的优势：让对象的调用者和对象创建过程分离，当对象调用者需要对象时，直接向工厂请求即可。
  * 从而避免了对象的调用者与对象的实现类以硬编码方式耦合，以提高系统的可维护性、可扩展性。
  * 工厂模式也有一个小小的缺陷：当产品修改时，工厂类也要做相应的修改，违反了开-闭原则。
- * 如上例，需要增加 男人 时，需要修改工厂类 PeopleFactory
+ * 如上例，需要增加乘法 时，需要修改工厂类 OperationFactory
  * 简单工厂模式适用于业务简单的情况下或者具体产品很少增加的情况。
  */
-interface IPeople
+class Operation {
+    private $_numberA = 0;
+    private $_numberB = 0;
+
+    public function getNumberA() {
+        return $this->_numberA;
+    }
+    public function getNumberB() {
+        return $this->_numberB;
+    }
+
+    public function setNumberA($value) {
+        $this->_numberA = $value;
+    }
+    public function setNumberB($value) {
+        $this->_numberB = $value;
+    }
+
+    public function getResult() { }
+}
+
+class OperationAdd extends Operation {
+
+    public function getResult()
+    {
+        return $this->getNumberA() + $this->getNumberB();
+    }
+}
+
+class OperationSub extends Operation {
+
+    public function getResult()
+    {
+        return $this->getNumberA() - $this->getNumberB();
+    }
+}
+
+class OperationFactory
 {
-    function getName();
-}
-
-class Man implements IPeople {
-
-    public function getName()
+    private $operate;
+    public function __construct($operate)
     {
-        // TODO: Implement getName() method.
-        return 'Man';
+        $this->operate = $operate;
     }
-}
-class Woman implements IPeople {
-
-    public function getName()
+    public function createOperate()
     {
-        // TODO: Implement getName() method.
-        return 'Woman';
-    }
-
-}
-class Children implements IPeople {
-
-    public function getName()
-    {
-        // TODO: Implement getName() method.
-        return 'children';
-    }
-
-}
-
-class PeopleFactory
-{
-    const MAN = 'man';
-    const WOMAN = 'woman';
-    const CHILDREN  = 'children';
-
-    private $people_type;
-    public function __construct($people_type)
-    {
-        $this->people_type = $people_type;
-    }
-    public function getPeople()
-    {
-        switch ($this->people_type){
-            case self::MAN:
-                return new Man();
+        $operator = new Operation();
+        switch ($this->operate){
+            case '+':
+                $operator =  new OperationAdd();
                 break;
-            case self::WOMAN:
-                return new Woman();
+            case '-':
+                $operator =  new OperationSub();
                 break;
-            case self::CHILDREN:
-                return new Children();
-                break;
-            default:
-                return null;
         }
+        return $operator;
     }
 }
 
-$man = (new PeopleFactory(PeopleFactory::MAN))->getPeople();
-$woman = (new PeopleFactory(PeopleFactory::WOMAN))->getPeople();
-$children = (new PeopleFactory(PeopleFactory::CHILDREN))->getPeople();
-echo $man->getName();
-echo $woman->getName();
-echo $children->getName();
+$add = (new OperationFactory('+'))->createOperate();
+$sub = (new OperationFactory('-'))->createOperate();
+$add->setNumberA(1);
+$add->setNumberB(2);
+echo $add->getResult();
