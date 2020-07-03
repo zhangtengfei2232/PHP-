@@ -15,7 +15,7 @@ class Singleton {
 
     public static function getInstance () {      //声明一个静态公共方法，供外部获取唯一实例
         if (! (self::$new instanceof self)) {    //线程安全
-            //在这里枷锁
+            //在这里加锁
             if (! (self::$new instanceof self)) {
                 self::$new = new self;
             }

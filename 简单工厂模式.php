@@ -50,15 +50,10 @@ class OperationSub extends Operation {
 
 class OperationFactory
 {
-    private $operate;
-    public function __construct($operate)
-    {
-        $this->operate = $operate;
-    }
-    public function createOperate()
+    public function createOperate($operate)
     {
         $operator = new Operation();
-        switch ($this->operate){
+        switch ($operate){
             case '+':
                 $operator =  new OperationAdd();
                 break;
@@ -69,9 +64,9 @@ class OperationFactory
         return $operator;
     }
 }
-
-$add = (new OperationFactory('+'))->createOperate();
-$sub = (new OperationFactory('-'))->createOperate();
+$factory  = new OperationFactory();
+$add = $factory->createOperate('+');
+$sub = $factory->createOperate('-');
 $add->setNumberA(1);
 $add->setNumberB(2);
 echo $add->getResult();
