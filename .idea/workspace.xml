@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac29ef13-c18e-410f-84f4-cf1a0183df08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/原型模式深复制.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/享元模式.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代理模式.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/外观模式.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/组合模式.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/原型模式.php" beforeDir="false" afterPath="$PROJECT_DIR$/原型模式浅复制.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/桥接模式.php" beforeDir="false" afterPath="$PROJECT_DIR$/桥接模式.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/装饰模式.php" beforeDir="false" afterPath="$PROJECT_DIR$/装饰模式.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/适配器模式.php" beforeDir="false" afterPath="$PROJECT_DIR$/适配器模式.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +79,8 @@
       <workItem from="1568949859300" duration="3536000" />
       <workItem from="1570439689120" duration="3955000" />
       <workItem from="1593480306089" duration="10692000" />
-      <workItem from="1593772914408" duration="12910000" />
+      <workItem from="1593772914408" duration="20416000" />
+      <workItem from="1593935752666" duration="7264000" />
     </task>
     <servers />
   </component>
@@ -82,13 +88,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="342" key="NewPhpFileDialog" timestamp="1593826982150">
+    <state x="461" y="342" key="NewPhpFileDialog" timestamp="1593937985468">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="461" y="342" key="NewPhpFileDialog/0.23.1280.777@0.23.1280.777" timestamp="1593826982150" />
-    <state x="319" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1593772912932">
+    <state x="461" y="342" key="NewPhpFileDialog/0.23.1280.777@0.23.1280.777" timestamp="1593937985468" />
+    <state x="319" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1593935752644">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="319" y="244" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1593772912932" />
+    <state x="319" y="244" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1593935752644" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1593959400879">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1593959400879" />
   </component>
 </project>
